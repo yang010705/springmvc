@@ -67,9 +67,8 @@ public class RequestBodyJsonController {
 
     @ResponseBody
     @PostMapping("/request-body-json-v5")
-    public HelloData requestBodyJsonV5(HttpEntity<HelloData> data) throws IOException {
-        HelloData helloData = data.getBody();
-        log.info("username={}, age={}", helloData.getUsername(), helloData.getAge());
+    public HelloData requestBodyJsonV5(@RequestBody HelloData data) throws IOException {
+        log.info("username={}, age={}", data.getUsername(), data.getAge());
         return data;
     }
 }
